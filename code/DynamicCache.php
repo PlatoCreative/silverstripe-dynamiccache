@@ -6,7 +6,7 @@
  * @author Damian Mooyman
  * @package dynamiccache
  */
-class DynamicCache extends Object implements Flushable
+class DynamicCache extends SS_Object implements Flushable
 {
     public static function flush() {
         self::inst()->clear();
@@ -114,7 +114,7 @@ class DynamicCache extends Object implements Flushable
                 return false;
             }
 
-            // NOTE(Jake): Required so MemberAuthenticator::record_login_attempt() can call 
+            // NOTE(Jake): Required so MemberAuthenticator::record_login_attempt() can call
             //             Controller::curr()->getRequest()->getIP()
             $stubController = new Controller;
             $stubController->pushCurrent();
